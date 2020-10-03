@@ -1,0 +1,10 @@
+endpoint, Cisco DX80, https://192.168.1.98
+endpoint, Cisco DX70, https://192.168.1.224
+router, ASUS Wifi Router, http://192.168.1.1
+web, Pexip Docs, https://docs.pexip.com
+web, Pexip.me, https://pexip.me
+web, Microsoft Teams, https://teams.microsoft.com
+web, Google Hangouts, https://hangouts.google.com
+web, Microsoft Azure Portal, https://portal.azure.com
+web, Google Cloud Console, https://console.cloud.google.com
+web, AWS Portal, https://signin.aws.amazon.com/

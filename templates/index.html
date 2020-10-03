@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+    <div class="container-md">
+        <h3>
+            iFrame Refresh (Auto)
+            <small class="text-muted">iFrame below will auto refresh</small>
+        </h3>
+    </div>
+    <br>
+    <div class="container-md">
+        <iframe id="test_frame" src="/connect_test" class="container-md" height="500">
+        </iframe>
+
+        <script>
+            // reloads the iframe every 60 secs
+            window.setInterval("reloadIFrame();", 60000);
+
+            function reloadIFrame() {
+            var frameHolder=document.getElementById('test_frame');
+            frameHolder.src="/connect_test"
+            }
+        </script>
+
+    </div>
+{% endblock %}

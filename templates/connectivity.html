@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        
+        
+            <table width="100%">
+                {% for i in host_labels %}
+                    <tr>
+                        {% if categories[loop.index0] == "endpoint" %}
+                            <td><i class="fa fa-video-camera"></i></td>
+                        {% elif categories[loop.index0] == "router" %}
+                            <td><i class="fa fa-wifi"></i></td>
+                        {% elif categories[loop.index0] == "web" %}
+                            <td><i class="fa fa-cloud"></i></td>
+                        {% else %}
+                            <td><i class="fa fa-desktop"></i></td>
+                        {% endif %}
+                        <td>{{ host_labels[loop.index0] }}</td>
+                        <td><a href="{{ urls[loop.index0] }}" target="_blank">{{ urls[loop.index0] }}</a></td>
+                        {% if results[loop.index0] == "Reachable" %}
+                            <td><span class="badge badge-success">Online</span></td>
+                        {% else %}
+                            <td><span class="badge badge-warning">Unreachable</span></td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+            
+        
+        
+    </body>
+
+</html>
+
+
